@@ -34,6 +34,7 @@
 , automake
 , libtool
 , libdnet
+, yasm
 }:
 
 let
@@ -75,6 +76,7 @@ stdenv.mkDerivation rec {
     autoconf213 # automake gettext libtool
     xorg.libXt libdnet
     libffi readline icu zlib
+    yasm
   ];
 
 #  NIX_CFLAGS_COMPILE = toString ([
