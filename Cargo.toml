@@ -1,0 +1,18 @@
+[package]
+name = "fireframe"
+version = "0.1.0"
+authors = ["Maciej Krüger <mkg20001@gmail.com>"]
+# edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# layout 2020
+libservo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013" ] }
+style = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "servo", "servo-layout-2013" ] }
+
+# libservo = { path = "../servo" }
+
+#[tools]
+#layout-2020 = false
+
