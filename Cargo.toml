@@ -8,8 +8,11 @@ edition = "2018"
 
 [dependencies]
 # layout 2020
-libservo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013" ] }
+simpleservo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013", "media-dummy" ] } # TODO: media-gstreamer
+servo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013", "media-dummy" ] } # TODO: media-gstreamer
+libservo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013", "media-dummy" ] } # TODO: media-gstreamer
 style = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "servo", "servo-layout-2013" ] }
+glutin = ""
 
 # Todo: keep updated with upstream
 
