@@ -2,7 +2,7 @@
 name = "fireframe"
 version = "0.1.0"
 authors = ["Maciej Krüger <mkg20001@gmail.com>"]
-# edition = "2018"
+edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -11,7 +11,7 @@ authors = ["Maciej Krüger <mkg20001@gmail.com>"]
 libservo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013" ] }
 style = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "servo", "servo-layout-2013" ] }
 
-# libservo = { path = "../servo" }
+# Todo: keep updated with upstream
 
 [profile.release]
 opt-level = 3
@@ -38,4 +38,3 @@ spirv_cross = { git = "https://github.com/servo/spirv_cross", branch = "wgpu-ser
 backtrace = { git = "https://github.com/MeFisto94/backtrace-rs", branch = "fix-strtab-freeing-crash" }
 surfman-chains = { git = "https://github.com/asajeffrey/surfman-chains" }
 surfman = { git = "https://github.com/servo/surfman" }
-
