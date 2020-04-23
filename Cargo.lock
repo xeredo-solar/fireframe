@@ -360,12 +360,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "bumpalo"
-version = "3.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12ae9db68ad7fac5fe51304d20f016c911539251075a214f8e663babefa35187"
-
-[[package]]
 name = "byte-slice-cast"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -433,8 +427,8 @@ dependencies = [
  "raqote",
  "servo_config",
  "sparkle",
- "surfman 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "surfman-chains 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "surfman",
+ "surfman-chains",
  "surfman-chains-api",
  "webrender",
  "webrender_api",
@@ -1685,17 +1679,6 @@ dependencies = [
 
 [[package]]
 name = "gl_generator"
-version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "39a23d5e872a275135d66895d954269cf5e8661d234eb1c2480f4ce0d586acbd"
-dependencies = [
- "khronos_api",
- "log",
- "xml-rs",
-]
-
-[[package]]
-name = "gl_generator"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ca98bbde17256e02d17336a6bdb5a50f7d0ccacee502e191d3e3d0ec2f96f84a"
@@ -2134,15 +2117,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "js-sys"
-version = "0.3.37"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a27d435371a2fa5b6d2b028a74bbdb1234f308da363226a2854ca3ff8ba7055"
-dependencies = [
- "wasm-bindgen",
-]
-
-[[package]]
 name = "jstraceable_derive"
 version = "0.0.1"
 source = "git+https://github.com/servo/servo?rev=5504d9259d59bb80e019ed1563b213dcf56fc86a#5504d9259d59bb80e019ed1563b213dcf56fc86a"
@@ -2390,7 +2364,7 @@ dependencies = [
  "sparkle",
  "style",
  "style_traits",
- "surfman 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "surfman",
  "webgpu",
  "webrender",
  "webrender_api",
@@ -3086,15 +3060,6 @@ name = "ordermap"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a86ed3f5f244b372d6b1a00b72ef7f8876d0bc6a78a4c9985c53614041512063"
-
-[[package]]
-name = "osmesa-sys"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "88cfece6e95d2e717e0872a7f53a8684712ad13822a7979bc760b9c77ec0013b"
-dependencies = [
- "shared_library",
-]
 
 [[package]]
 name = "owning_ref"
@@ -4299,12 +4264,9 @@ checksum = "b72d540d5c565dbe1f891d7e21ceb21d2649508306782f1066989fccb0b363d3"
 [[package]]
 name = "spirv_cross"
 version = "0.16.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fbbe441b3ac8ec0ae6a4f05234239bd372a241ce15793eef694e8b24afc267bb"
+source = "git+https://github.com/servo/spirv_cross?branch=wgpu-servo#636677bad724797789239c16e6d332e9b4d97b86"
 dependencies = [
  "cc",
- "js-sys",
- "wasm-bindgen",
 ]
 
 [[package]]
@@ -4465,34 +4427,6 @@ dependencies = [
 
 [[package]]
 name = "surfman"
-version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "43bf043642ad98aaa51956091c4f829a400bad5f023b5f0095ecda61f925c63d"
-dependencies = [
- "bitflags",
- "cgl",
- "cocoa 0.19.1",
- "core-foundation 0.6.4",
- "core-graphics 0.17.3",
- "display-link",
- "euclid",
- "gl_generator 0.11.0",
- "io-surface",
- "lazy_static",
- "libc",
- "log",
- "mach",
- "objc",
- "osmesa-sys",
- "wayland-sys 0.24.0",
- "winapi 0.3.8",
- "winit",
- "wio",
- "x11",
-]
-
-[[package]]
-name = "surfman"
 version = "0.2.0"
 source = "git+https://github.com/servo/surfman#41ac1ee64bc2d1978aeed0f8bf549c57f20ec7c8"
 dependencies = [
@@ -4520,34 +4454,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "surfman"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d28b4931b29b2c65fcce61898d6b4dbae2337a60308176c2d5cbff0913740d4a"
-dependencies = [
- "bitflags",
- "cgl",
- "cocoa 0.19.1",
- "core-foundation 0.6.4",
- "core-graphics 0.17.3",
- "display-link",
- "euclid",
- "gl_generator 0.11.0",
- "io-surface",
- "lazy_static",
- "libc",
- "log",
- "mach",
- "objc",
- "parking_lot",
- "wayland-sys 0.24.0",
- "winapi 0.3.8",
- "winit",
- "wio",
- "x11",
-]
-
-[[package]]
 name = "surfman-chains"
 version = "0.3.0"
 source = "git+https://github.com/asajeffrey/surfman-chains#b949a240d73ef86d3c4bd22bc3d93933fac21ee9"
@@ -4556,21 +4462,7 @@ dependencies = [
  "fnv",
  "log",
  "sparkle",
- "surfman 0.2.0 (git+https://github.com/servo/surfman)",
- "surfman-chains-api",
-]
-
-[[package]]
-name = "surfman-chains"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a2a679f5be9644bbf93662f3b1a704cc6b81c147d4b7d6d5c8d8b6f453176f01"
-dependencies = [
- "euclid",
- "fnv",
- "log",
- "sparkle",
- "surfman 0.1.4",
+ "surfman",
  "surfman-chains-api",
 ]
 
@@ -5200,60 +5092,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b89c3ce4ce14bdc6fb6beaf9ec7928ca331de5df7e5ea278375642a2f478570d"
 
 [[package]]
-name = "wasm-bindgen"
-version = "0.2.60"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2cc57ce05287f8376e998cbddfb4c8cb43b84a7ec55cf4551d7c00eef317a47f"
-dependencies = [
- "cfg-if",
- "wasm-bindgen-macro",
-]
-
-[[package]]
-name = "wasm-bindgen-backend"
-version = "0.2.60"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d967d37bf6c16cca2973ca3af071d0a2523392e4a594548155d89a678f4237cd"
-dependencies = [
- "bumpalo",
- "lazy_static",
- "log",
- "proc-macro2 1.0.1",
- "quote 1.0.2",
- "syn",
- "wasm-bindgen-shared",
-]
-
-[[package]]
-name = "wasm-bindgen-macro"
-version = "0.2.60"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8bd151b63e1ea881bb742cd20e1d6127cef28399558f3b5d415289bc41eee3a4"
-dependencies = [
- "quote 1.0.2",
- "wasm-bindgen-macro-support",
-]
-
-[[package]]
-name = "wasm-bindgen-macro-support"
-version = "0.2.60"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d68a5b36eef1be7868f668632863292e37739656a80fc4b9acec7b0bd35a4931"
-dependencies = [
- "proc-macro2 1.0.1",
- "quote 1.0.2",
- "syn",
- "wasm-bindgen-backend",
- "wasm-bindgen-shared",
-]
-
-[[package]]
-name = "wasm-bindgen-shared"
-version = "0.2.60"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "daf76fe7d25ac79748a37538b7daeed1c7a6867c92d3245c12c6222e4a20d639"
-
-[[package]]
 name = "wayland-client"
 version = "0.21.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5430,8 +5268,8 @@ version = "0.0.1"
 source = "git+https://github.com/servo/servo?rev=5504d9259d59bb80e019ed1563b213dcf56fc86a#5504d9259d59bb80e019ed1563b213dcf56fc86a"
 dependencies = [
  "euclid",
- "surfman 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "surfman-chains 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "surfman",
+ "surfman-chains",
 ]
 
 [[package]]
@@ -5455,8 +5293,8 @@ dependencies = [
  "gl_generator 0.13.1",
  "gleam 0.9.2",
  "log",
- "surfman 0.2.0 (git+https://github.com/servo/surfman)",
- "surfman-chains 0.3.0 (git+https://github.com/asajeffrey/surfman-chains)",
+ "surfman",
+ "surfman-chains",
  "time",
  "webxr-api",
 ]
@@ -5517,8 +5355,7 @@ checksum = "167dc9d6949a9b857f3451275e911c3f44255842c1f7a76f33c55103a909087a"
 [[package]]
 name = "winapi"
 version = "0.3.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8093091eeb260906a183e6ae1abdba2ef5ef2257a21801128899c3fc699229c6"
+source = "git+https://github.com/servo/winapi-rs?branch=patch-1#f85c3541bbb331fea8918ac070accfb4ab613e7b"
 dependencies = [
  "winapi-i686-pc-windows-gnu",
  "winapi-x86_64-pc-windows-gnu",
@@ -5533,8 +5370,7 @@ checksum = "2d315eee3b34aca4797b2da6b13ed88266e6d612562a0c46390af8299fc699bc"
 [[package]]
 name = "winapi-i686-pc-windows-gnu"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+source = "git+https://github.com/servo/winapi-rs?branch=patch-1#f85c3541bbb331fea8918ac070accfb4ab613e7b"
 
 [[package]]
 name = "winapi-util"
@@ -5548,8 +5384,7 @@ dependencies = [
 [[package]]
 name = "winapi-x86_64-pc-windows-gnu"
 version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+source = "git+https://github.com/servo/winapi-rs?branch=patch-1#f85c3541bbb331fea8918ac070accfb4ab613e7b"
 
 [[package]]
 name = "wincolor"
@@ -5683,3 +5518,13 @@ dependencies = [
  "markup5ever",
  "time",
 ]
+
+[[patch.unused]]
+name = "backtrace"
+version = "0.3.40"
+source = "git+https://github.com/MeFisto94/backtrace-rs?branch=fix-strtab-freeing-crash#91a0aa4a5d649151878cddd883b92ba7057ca41c"
+
+[[patch.unused]]
+name = "mio"
+version = "0.6.18"
+source = "git+https://github.com/servo/mio.git?branch=servo#846242c05bacacda9a67033551eb33027f2648fc"
