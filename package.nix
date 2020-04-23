@@ -24,6 +24,16 @@
 , cmake
 , freetype
 , expat
+, libffi
+, readline
+, icu
+, zlib
+, python35
+, python2
+, autoconf213
+, automake
+, libtool
+, libdnet
 }:
 
 let
@@ -46,6 +56,8 @@ stdenv.mkDerivation rec {
   cargoSha256 = "sha256-Z5LxAFc4SGFpbPRF1tL7qHSzkt8xCaVXsiidbp4QSk0=";
 
   nativeBuildInputs = [
+    # python35
+    python2
     pkgconfig
     makeWrapper
     gettext
@@ -58,7 +70,18 @@ stdenv.mkDerivation rec {
     cmake
     freetype
     expat
+    llvmPackages.clang
+    llvmPackages.llvm # llvm-objdump
+    autoconf213 # automake gettext libtool
+    xorg.libXt libdnet
+    libffi readline icu zlib
   ];
+
+#  NIX_CFLAGS_COMPILE = toString ([
+#    "-I${glib.dev}/include/gio-unix-2.0"
+#    "-I${nss.dev}/include/nss"
+#  ];
+
 
   preBuild = ''
     export LIBCLANG_PATH=${llvmPackages.libclang}/lib
