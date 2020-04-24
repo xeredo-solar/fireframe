@@ -14,6 +14,11 @@ libservo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019
 style = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "servo", "servo-layout-2013" ] }
 glutin = ""
 
+json = "0.12"
+structopt = ""
+loggerv = ""
+log = "0.4"
+
 # Todo: keep updated with upstream
 
 [profile.release]

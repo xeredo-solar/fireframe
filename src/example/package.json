@@ -1,0 +1,9 @@
+{
+  "launcher": {
+    "title": "Hello World",
+    "icon": "gtk-yes",
+    "main": "./index.html",
+    "width": 800,
+    "height": 600
+  }
+}
