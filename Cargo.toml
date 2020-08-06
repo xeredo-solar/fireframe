@@ -8,16 +8,19 @@ edition = "2018"
 
 [dependencies]
 # layout 2020
-simpleservo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013", "media-dummy" ] } # TODO: media-gstreamer
-servo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013", "media-dummy" ] } # TODO: media-gstreamer
-libservo = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "layout-2013", "media-dummy" ] } # TODO: media-gstreamer
-style = { git = "https://github.com/servo/servo", rev = "5504d9259d59bb80e019ed1563b213dcf56fc86a", features = [ "servo", "servo-layout-2013" ] }
+servo = { git = "https://github.com/servo/servo", rev = "39c3f46375f2baf33c46d92ab5c110766330a6d8", features = [ "layout-2020", "media-dummy" ] } # TODO: media-gstreamer
+simpleservo = { git = "https://github.com/servo/servo", rev = "39c3f46375f2baf33c46d92ab5c110766330a6d8", features = [ "layout-2020", "media-dummy" ] } # TODO: media-gstreamer
+libservo = { git = "https://github.com/servo/servo", rev = "39c3f46375f2baf33c46d92ab5c110766330a6d8", features = [ "layout-2020", "media-dummy" ] } # TODO: media-gstreamer
+style = { git = "https://github.com/servo/servo", rev = "39c3f46375f2baf33c46d92ab5c110766330a6d8", features = [ "servo", "servo-layout-2020" ] }
 glutin = ""
 
 json = "0.12"
 structopt = ""
 loggerv = ""
 log = "0.4"
+
+# egl = ""
+# smallvec = ""
 
 # Todo: keep updated with upstream
 
@@ -38,11 +41,13 @@ opt-level = 3
 #     [patch."https://github.com/servo/<repository>"]
 #     <crate> = { path = "/path/to/local/checkout" }
 
-# Those are here to dedupe winapi since mio is still using winapi 0.2.
-mio = { git = "https://github.com/servo/mio.git", branch = "servo" }
-# https://github.com/retep998/winapi-rs/pull/816
-winapi = { git = "https://github.com/servo/winapi-rs", branch = "patch-1" }
-spirv_cross = { git = "https://github.com/servo/spirv_cross", branch = "wgpu-servo" }
-backtrace = { git = "https://github.com/MeFisto94/backtrace-rs", branch = "fix-strtab-freeing-crash" }
-surfman-chains = { git = "https://github.com/asajeffrey/surfman-chains" }
-surfman = { git = "https://github.com/servo/surfman" }
+# This is here to dedupe winapi since mio 0.6 is still using winapi 0.2.
+mio = { git = "https://github.com/servo/mio.git", branch = "servo-mio-0.6.22" }
+
+# https://github.com/rust-lang/backtrace-rs/pull/363/
+backtrace = { git = "https://github.com/servo/backtrace-rs", branch = "uwp-fix" }
+
+# https://github.com/servo/servo/issues/27039#issuecomment-654400150
+[patch."https://github.com/servo/webrender"]
+webrender = { git = "https://github.com/jdm/webrender", branch = "crash-backtrace" }
+webrender_api = { git = "https://github.com/jdm/webrender", branch = "crash-backtrace" }

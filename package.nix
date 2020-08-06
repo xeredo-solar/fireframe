@@ -104,11 +104,10 @@ stdenv.mkDerivation rec {
 #  '';
 
   meta = with stdenv.lib; {
-    description = "merOS Browser";
-    homepage = "https://github.com/mercode-org/merfire";
+    description = "";
+    homepage = "https://github.com/ssd-solar/fireframe";
     # license = licenses.mpl2;
     maintainers = with maintainers; [ mkg20001 ];
     platforms = [ "x86_64-linux" ];
   };
 }
-

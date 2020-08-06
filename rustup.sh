@@ -3,4 +3,4 @@
 set -euo pipefail
 
 rustup default nightly
-rustup component add rustc-dev
+rustup component add --toolchain nightly rustc-dev

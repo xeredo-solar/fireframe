@@ -14,6 +14,8 @@ use std::fs::File;
 use std::io::Read;
 use std::process::exit;
 
+mod frame;
+
 /// Do fancy things
 #[derive(StructOpt, Debug)]
 #[structopt(name = "fireframe")]
@@ -49,7 +51,7 @@ fn main() {
 
     let app = args.app.and_then(|p: String| Some(PathBuf::from(p))).or(Some(example)).expect("failure to unwrap app");
 
-    debug!("app {}", app.to_str().expect("yada"));
+    info!("launching {}", app.to_str().expect("yada"));
 
     let mut package_json = app.clone();
 
@@ -72,4 +74,17 @@ fn main() {
         err!("launcher settings not found, got {:?}", meta);
     }
 
+    debug!("launching with {:?}", launcher);
+
+    if !launcher["main"].is_string() {
+        err!("launcher.main not found");
+    }
+
+    let mut main_file = app.clone();
+
+    main_file.push(launcher["main"].as_str().expect("iyada"));
+
+    info!("main {}", main_file.to_str().expect("yada"));
+
+    frame::main();
 }
