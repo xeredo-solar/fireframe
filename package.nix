@@ -3,6 +3,7 @@
 , pkgconfig
 , dbus
 , rust
+, rustPlatform
 , gettext
 , fetchFromGitHub
 , lib
@@ -54,7 +55,7 @@ stdenv.mkDerivation rec {
 
   src = gitignoreSource ./.;
 
-  cargoSha256 = "sha256-Z5LxAFc4SGFpbPRF1tL7qHSzkt8xCaVXsiidbp4QSk0=";
+  cargoSha256 = "sha256:1mpw74y243ch535lcgbpcy6n9ji6cvh4irh4wj9js33cvck9q8r1";
 
   nativeBuildInputs = [
     # python35
